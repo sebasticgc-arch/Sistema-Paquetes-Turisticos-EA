@@ -1,0 +1,6 @@
+DiagramName,MessageNumber,Source,Target,MessageName,MessageType,Description
+04 - Colaboracion,1,ui,ctl,solicitarReserva(),synchCall,InterfazUsuario solicita reserva al Controlador
+04 - Colaboracion,1.1,ctl,prc,calcularPrecio(),synchCall,Controlador pide cálculo de precio al Gestor
+04 - Colaboracion,1.1.1,ctl,ope,verificarDisponibilidad(),synchCall,Controlador verifica disponibilidad en Operadores
+04 - Colaboracion,1.1.2,ctl,ope,confirmarReserva(),synchCall,Controlador confirma reserva en Operadores
+04 - Colaboracion,1.2,ctl,ui,mostrarConfirmacion(),synchCall,Controlador retorna confirmación a InterfazUsuario
