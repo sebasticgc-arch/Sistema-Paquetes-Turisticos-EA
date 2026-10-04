@@ -1,0 +1,22 @@
+ElementType,Name,Id,Stereotype,Package,Description
+Actor,Cliente,ACTOR_CLIENTE,,Sistema de Paquetes Turisticos,Persona que busca y reserva paquetes turísticos
+Actor,Administrador,ACTOR_ADMIN,,Sistema de Paquetes Turisticos,Gestiona reservas y relaciones con operadores
+Actor,Operador Turistico,ACTOR_OPERADOR,,Sistema de Paquetes Turisticos,Sistema externo que verifica disponibilidad
+UseCase,Buscar paquete,UC_BUSCAR,,Sistema de Paquetes Turisticos,Cliente busca paquetes por destino y fechas
+UseCase,Armar paquete,UC_ARMAR,,Sistema de Paquetes Turisticos,Selecciona vuelos y hotel y traslados
+UseCase,Ajustar presupuesto,UC_AJUSTAR,,Sistema de Paquetes Turisticos,Adapta las opciones al presupuesto disponible
+UseCase,Comparar opciones,UC_COMPARAR,,Sistema de Paquetes Turisticos,Compara precios y destinos disponibles
+UseCase,Reservar paquete,UC_RESERVAR,,Sistema de Paquetes Turisticos,Inicia el proceso de reserva del paquete
+UseCase,Calcular precio,UC_CALCULAR,,Sistema de Paquetes Turisticos,Suma costos y aplica recargos según tipo de cliente
+UseCase,Confirmar reserva,UC_CONFIRMAR,,Sistema de Paquetes Turisticos,Cierra la transacción y confirma la reserva
+UseCase,Verificar disponibilidad,UC_VERIFICAR,,Sistema de Paquetes Turisticos,Consulta a operadores si hay disponibilidad
+UseCase,Notificar operadores,UC_NOTIFICAR,,Sistema de Paquetes Turisticos,Envía datos de reserva a operadores externos
+UseCase,Gestionar reservas,UC_GESTIONAR,,Sistema de Paquetes Turisticos,Administrador gestiona todas las reservas activas
+UseCase,Confirmar manual,UC_CONFIRMAR_MANUAL,,Sistema de Paquetes Turisticos,Confirmación manual de reserva por administrador
+UseCase,Recomendar alternativas,UC_RECOMENDAR,,Sistema de Paquetes Turisticos,Sugiere opciones alternativas si no hay disponibilidad
+UseCase,Registrar cliente,UC_REGISTRAR,,Sistema de Paquetes Turisticos,Registra datos del cliente nacional o extranjero
+Class,InterfazUsuario,CLASS_UI,,Sistema de Paquetes Turisticos,Interfaz para que cliente solicite reservas
+Class,ControladorReservas,CLASS_CTL,,Sistema de Paquetes Turisticos,Controla el flujo de la reserva
+Class,GestorPrecios,CLASS_PRC,,Sistema de Paquetes Turisticos,Calcula precios y aplica recargos
+Class,SistemaOperadores,CLASS_OPE,,Sistema de Paquetes Turisticos,Conecta con sistemas externos de operadores
+Activity,Reserva de Paquete Turistico,ACT_MAIN,,Sistema de Paquetes Turisticos,Flujo completo del proceso de reserva desde búsqueda hasta confirmación
