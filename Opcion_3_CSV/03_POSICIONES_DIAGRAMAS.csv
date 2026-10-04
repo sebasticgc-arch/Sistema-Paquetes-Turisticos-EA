@@ -1,0 +1,52 @@
+DiagramName,ElementId,ElementType,XCoord,YCoord,Width,Height,Description
+01 - Casos de Uso,ACTOR_CLIENTE,Actor,50,200,80,100,Actor Cliente - lado izquierdo
+01 - Casos de Uso,ACTOR_ADMIN,Actor,50,350,80,100,Actor Administrador - lado izquierdo
+01 - Casos de Uso,ACTOR_OPERADOR,Actor,50,500,80,100,Actor Operador Turístico - lado izquierdo
+01 - Casos de Uso,UC_BUSCAR,UseCase,250,150,100,60,Caso Buscar paquete - fila superior
+01 - Casos de Uso,UC_ARMAR,UseCase,380,150,100,60,Caso Armar paquete - fila superior
+01 - Casos de Uso,UC_AJUSTAR,UseCase,510,150,100,60,Caso Ajustar presupuesto - fila superior
+01 - Casos de Uso,UC_COMPARAR,UseCase,640,150,100,60,Caso Comparar opciones - fila superior
+01 - Casos de Uso,UC_RESERVAR,UseCase,315,280,100,60,Caso Reservar paquete - fila central
+01 - Casos de Uso,UC_CALCULAR,UseCase,445,280,100,60,Caso Calcular precio - fila central
+01 - Casos de Uso,UC_CONFIRMAR,UseCase,575,280,100,60,Caso Confirmar reserva - fila central
+01 - Casos de Uso,UC_VERIFICAR,UseCase,250,410,120,60,Caso Verificar disponibilidad - fila inferior
+01 - Casos de Uso,UC_NOTIFICAR,UseCase,410,410,120,60,Caso Notificar operadores - fila inferior
+01 - Casos de Uso,UC_GESTIONAR,UseCase,570,410,100,60,Caso Gestionar reservas - fila inferior
+01 - Casos de Uso,UC_REGISTRAR,UseCase,315,530,100,60,Caso Registrar cliente - fila baja
+01 - Casos de Uso,UC_RECOMENDAR,UseCase,445,530,120,60,Caso Recomendar alternativas - fila baja
+01 - Casos de Uso,UC_CONFIRMAR_MANUAL,UseCase,605,530,100,60,Caso Confirmar manual - fila baja
+02 - Actividades,N_INIT,InitialNode,100,50,30,30,Nodo inicial - parte superior
+02 - Actividades,N_BUSCAR,OpaqueAction,50,120,120,60,Acción: Buscar paquete - partición Cliente
+02 - Actividades,N_COMPARAR,OpaqueAction,50,220,120,60,Acción: Comparar referencias - partición Cliente
+02 - Actividades,N_ARMAR,OpaqueAction,50,320,120,60,Acción: Armar/ajustar paquete - partición Cliente
+02 - Actividades,N_DECISION1,DecisionNode,90,420,40,40,Decisión: ¿Se ajusta al presupuesto? - partición Cliente
+02 - Actividades,N_SOLICITAR,OpaqueAction,50,500,120,60,Acción: Solicitar reserva - partición Cliente
+02 - Actividades,N_RECOMENDAR,OpaqueAction,350,380,120,60,Acción: Recomendar alternativas - partición Sistema
+02 - Actividades,N_VERIFICAR,OpaqueAction,350,480,120,60,Acción: Verificar disponibilidad - partición Sistema
+02 - Actividades,N_DECISION2,DecisionNode,410,580,40,40,Decisión: ¿Hay disponibilidad? - partición Sistema
+02 - Actividades,N_CALCULAR,OpaqueAction,350,650,120,60,Acción: Calcular precio - partición Sistema
+02 - Actividades,N_DECISION3,DecisionNode,410,750,40,40,Decisión: ¿Tipo de cliente? - partición Sistema
+02 - Actividades,N_RECARGO_NAC,OpaqueAction,330,830,120,40,Acción: Recargo Nacional - partición Sistema
+02 - Actividades,N_RECARGO_EXT,OpaqueAction,480,830,120,40,Acción: Recargo Extranjero - partición Sistema
+02 - Actividades,N_MERGE,MergeNode,530,760,40,40,Merge de recargos - partición Sistema
+02 - Actividades,N_ENVIAR,OpaqueAction,480,680,120,60,Acción: Enviar confirmación - partición Sistema
+02 - Actividades,N_MANUAL,OpaqueAction,850,650,120,60,Acción: Confirmar manual - partición Administrador
+02 - Actividades,N_FINAL,ActivityFinalNode,920,780,30,30,Nodo final - partición Administrador
+03 - Secuencia,LL_CLIENTE,Lifeline,50,50,80,700,Lifeline Cliente - extremo izquierdo
+03 - Secuencia,LL_UI,Lifeline,200,50,120,700,Lifeline InterfazUsuario - segundo columna
+03 - Secuencia,LL_CTL,Lifeline,400,50,140,700,Lifeline ControladorReservas - columna central
+03 - Secuencia,LL_PRC,Lifeline,620,50,120,700,Lifeline GestorPrecios - columna derecha-central
+03 - Secuencia,LL_OPE,Lifeline,820,50,140,700,Lifeline SistemaOperadores - extremo derecho
+03 - Secuencia,MSG1,Message,90,120,110,50,Mensaje 1: solicitarReserva(paquete)
+03 - Secuencia,MSG2,Message,200,180,200,50,Mensaje 1.1: registrarReserva()
+03 - Secuencia,MSG3,Message,400,240,220,50,Mensaje 1.1.1: calcularPrecio()
+03 - Secuencia,MSG4,Message,620,300,220,50,Mensaje 1.1.2: [precioFinal] reply
+03 - Secuencia,MSG5,Message,400,360,420,50,Mensaje 1.1.3: verificarDisponibilidad()
+03 - Secuencia,MSG6,Message,820,420,420,50,Mensaje 1.1.4: [disponible] reply
+03 - Secuencia,MSG7,Message,400,480,420,50,Mensaje 1.1.5: confirmarReserva()
+03 - Secuencia,MSG8,Message,820,540,420,50,Mensaje 1.1.6: [confirmacion] reply
+03 - Secuencia,MSG9,Message,200,600,200,50,Mensaje 1.2: mostrarConfirmacion()
+04 - Colaboracion,COLL_UI,ConnectableElement,100,100,100,100,Objeto ui:InterfazUsuario - lado izquierdo
+04 - Colaboracion,COLL_CTL,ConnectableElement,350,100,120,100,Objeto ctl:ControladorReservas - centro superior
+04 - Colaboracion,COLL_PRC,ConnectableElement,600,100,100,100,Objeto prc:GestorPrecios - lado derecho superior
+04 - Colaboracion,COLL_OPE,ConnectableElement,350,350,120,100,Objeto ope:SistemaOperadores - centro inferior
