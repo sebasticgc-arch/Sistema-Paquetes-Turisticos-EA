@@ -1,0 +1,22 @@
+ElementType,Name,Id,Type,GUID,Stereotype,Package,Description
+Actor,Cliente,ACTOR_CLIENTE,Actor,{00000001-0001-0001-0001-000000000001},,Sistema de Paquetes Turisticos,Persona que busca y reserva paquetes turísticos
+Actor,Administrador,ACTOR_ADMIN,Actor,{00000001-0001-0001-0001-000000000002},,Sistema de Paquetes Turisticos,Gestiona reservas y relaciones con operadores
+Actor,Operador Turistico,ACTOR_OPERADOR,Actor,{00000001-0001-0001-0001-000000000003},,Sistema de Paquetes Turisticos,Sistema externo que verifica disponibilidad
+UseCase,Buscar paquete,UC_BUSCAR,UseCase,{00000001-0001-0001-0001-000000000004},,Sistema de Paquetes Turisticos,Cliente busca paquetes por destino y fechas
+UseCase,Armar paquete,UC_ARMAR,UseCase,{00000001-0001-0001-0001-000000000005},,Sistema de Paquetes Turisticos,Selecciona vuelos y hotel y traslados
+UseCase,Ajustar presupuesto,UC_AJUSTAR,UseCase,{00000001-0001-0001-0001-000000000006},,Sistema de Paquetes Turisticos,Adapta las opciones al presupuesto disponible
+UseCase,Comparar opciones,UC_COMPARAR,UseCase,{00000001-0001-0001-0001-000000000007},,Sistema de Paquetes Turisticos,Compara precios y destinos disponibles
+UseCase,Reservar paquete,UC_RESERVAR,UseCase,{00000001-0001-0001-0001-000000000008},,Sistema de Paquetes Turisticos,Inicia el proceso de reserva del paquete
+UseCase,Calcular precio,UC_CALCULAR,UseCase,{00000001-0001-0001-0001-000000000009},,Sistema de Paquetes Turisticos,Suma costos y aplica recargos según tipo de cliente
+UseCase,Confirmar reserva,UC_CONFIRMAR,UseCase,{00000001-0001-0001-0001-000000000010},,Sistema de Paquetes Turisticos,Cierra la transacción y confirma la reserva
+UseCase,Verificar disponibilidad,UC_VERIFICAR,UseCase,{00000001-0001-0001-0001-000000000011},,Sistema de Paquetes Turisticos,Consulta a operadores si hay disponibilidad
+UseCase,Notificar operadores,UC_NOTIFICAR,UseCase,{00000001-0001-0001-0001-000000000012},,Sistema de Paquetes Turisticos,Envía datos de reserva a operadores externos
+UseCase,Gestionar reservas,UC_GESTIONAR,UseCase,{00000001-0001-0001-0001-000000000013},,Sistema de Paquetes Turisticos,Administrador gestiona todas las reservas activas
+UseCase,Confirmar manual,UC_CONFIRMAR_MANUAL,UseCase,{00000001-0001-0001-0001-000000000014},,Sistema de Paquetes Turisticos,Confirmación manual de reserva por administrador
+UseCase,Recomendar alternativas,UC_RECOMENDAR,UseCase,{00000001-0001-0001-0001-000000000015},,Sistema de Paquetes Turisticos,Sugiere opciones alternativas si no hay disponibilidad
+UseCase,Registrar cliente,UC_REGISTRAR,UseCase,{00000001-0001-0001-0001-000000000016},,Sistema de Paquetes Turisticos,Registra datos del cliente nacional o extranjero
+Class,InterfazUsuario,CLASS_UI,Class,{00000001-0001-0001-0001-000000000017},,Sistema de Paquetes Turisticos,Interfaz para que cliente solicite reservas
+Class,ControladorReservas,CLASS_CTL,Class,{00000001-0001-0001-0001-000000000018},,Sistema de Paquetes Turisticos,Controla el flujo de la reserva
+Class,GestorPrecios,CLASS_PRC,Class,{00000001-0001-0001-0001-000000000019},,Sistema de Paquetes Turisticos,Calcula precios y aplica recargos
+Class,SistemaOperadores,CLASS_OPE,Class,{00000001-0001-0001-0001-000000000020},,Sistema de Paquetes Turisticos,Conecta con sistemas externos de operadores
+Activity,Reserva de Paquete Turistico,ACT_MAIN,Activity,{00000001-0001-0001-0001-000000000021},,Sistema de Paquetes Turisticos,Flujo completo del proceso de reserva desde búsqueda hasta confirmación
