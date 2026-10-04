@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="http://schema.omg.org/UML/1.3" xmlns:xmi="http://www.omg.org/2001/XMLSchema-instance">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Enterprise Architect</XMI.exporter>
+      <XMI.exporterVersion>8.0</XMI.exporterVersion>
+    </XMI.documentation>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model name="Sistema de Paquetes Turisticos" xmi.id="MID_1">
+      <UML:Namespace.ownedElement>
+        <UML:Package name="Sistema de Paquetes Turisticos" xmi.id="PKG_MAIN">
+          <UML:Namespace.ownedElement>
+            
+            <!-- ACTORES -->
+            <UML:Actor name="Cliente" xmi.id="ACT_CLI"/>
+            <UML:Actor name="Administrador" xmi.id="ACT_ADM"/>
+            <UML:Actor name="Operador Turistico" xmi.id="ACT_OPE"/>
+            
+            <!-- CASOS DE USO -->
+            <UML:UseCase name="Buscar paquete" xmi.id="UC_001"/>
+            <UML:UseCase name="Armar paquete" xmi.id="UC_002"/>
+            <UML:UseCase name="Ajustar presupuesto" xmi.id="UC_003"/>
+            <UML:UseCase name="Comparar opciones" xmi.id="UC_004"/>
+            <UML:UseCase name="Reservar paquete" xmi.id="UC_005"/>
+            <UML:UseCase name="Calcular precio" xmi.id="UC_006"/>
+            <UML:UseCase name="Confirmar reserva" xmi.id="UC_007"/>
+            <UML:UseCase name="Verificar disponibilidad" xmi.id="UC_008"/>
+            <UML:UseCase name="Notificar operadores" xmi.id="UC_009"/>
+            <UML:UseCase name="Gestionar reservas" xmi.id="UC_010"/>
+            <UML:UseCase name="Registrar cliente" xmi.id="UC_011"/>
+            <UML:UseCase name="Recomendar alternativas" xmi.id="UC_012"/>
+            <UML:UseCase name="Confirmar manual" xmi.id="UC_013"/>
+            
+            <!-- CLASES -->
+            <UML:Class name="InterfazUsuario" xmi.id="CLS_UI">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute name="usuarioActual" xmi.id="ATTR_UI_001"/>
+                <UML:Operation name="solicitarReserva" xmi.id="OP_UI_001"/>
+                <UML:Operation name="mostrarConfirmacion" xmi.id="OP_UI_002"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Class name="ControladorReservas" xmi.id="CLS_CTL">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute name="reservasActivas" xmi.id="ATTR_CTL_001"/>
+                <UML:Operation name="registrarReserva" xmi.id="OP_CTL_001"/>
+                <UML:Operation name="confirmarReserva" xmi.id="OP_CTL_002"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Class name="GestorPrecios" xmi.id="CLS_PRC">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute name="tasaRecargo" xmi.id="ATTR_PRC_001"/>
+                <UML:Operation name="calcularPrecio" xmi.id="OP_PRC_001"/>
+                <UML:Operation name="aplicarRecargo" xmi.id="OP_PRC_002"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Class name="SistemaOperadores" xmi.id="CLS_OPE">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute name="estadoConexion" xmi.id="ATTR_OPE_001"/>
+                <UML:Operation name="verificarDisponibilidad" xmi.id="OP_OPE_001"/>
+                <UML:Operation name="confirmarReserva" xmi.id="OP_OPE_002"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- ASOCIACIONES -->
+            <UML:Association name="cliente_busca" xmi.id="ASS_001">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="ACT_CLI" xmi.id="AE_001"/>
+                <UML:AssociationEnd type="UC_001" xmi.id="AE_002"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association name="cliente_arma" xmi.id="ASS_002">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="ACT_CLI" xmi.id="AE_003"/>
+                <UML:AssociationEnd type="UC_002" xmi.id="AE_004"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association name="cliente_reserva" xmi.id="ASS_003">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="ACT_CLI" xmi.id="AE_005"/>
+                <UML:AssociationEnd type="UC_005" xmi.id="AE_006"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association name="admin_gestiona" xmi.id="ASS_004">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="ACT_ADM" xmi.id="AE_007"/>
+                <UML:AssociationEnd type="UC_010" xmi.id="AE_008"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association name="operador_verifica" xmi.id="ASS_005">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="ACT_OPE" xmi.id="AE_009"/>
+                <UML:AssociationEnd type="UC_008" xmi.id="AE_010"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association name="operador_notifica" xmi.id="ASS_006">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="ACT_OPE" xmi.id="AE_011"/>
+                <UML:AssociationEnd type="UC_009" xmi.id="AE_012"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <!-- ABSTRACTION: INCLUDES -->
+            <UML:Abstraction name="include_registrar" xmi.id="INC_001">
+              <UML:Dependency.client type="UC_005"/>
+              <UML:Dependency.supplier type="UC_011"/>
+            </UML:Abstraction>
+            
+            <UML:Abstraction name="include_calcular" xmi.id="INC_002">
+              <UML:Dependency.client type="UC_005"/>
+              <UML:Dependency.supplier type="UC_006"/>
+            </UML:Abstraction>
+            
+            <UML:Abstraction name="include_verificar" xmi.id="INC_003">
+              <UML:Dependency.client type="UC_005"/>
+              <UML:Dependency.supplier type="UC_008"/>
+            </UML:Abstraction>
+            
+            <!-- ABSTRACTION: EXTENDS -->
+            <UML:Abstraction name="extend_confirmar" xmi.id="EXT_001">
+              <UML:Dependency.client type="UC_007"/>
+              <UML:Dependency.supplier type="UC_013"/>
+            </UML:Abstraction>
+            
+            <UML:Abstraction name="extend_recomendar" xmi.id="EXT_002">
+              <UML:Dependency.client type="UC_003"/>
+              <UML:Dependency.supplier type="UC_012"/>
+            </UML:Abstraction>
+            
+            <!-- DIAGRAM 1: CASOS DE USO -->
+            <UML:Diagram name="01_Casos_de_Uso" xmi.id="DIAGRAM_001">
+              <UML:Diagram.modelElement type="PKG_MAIN" xmi.idref="PKG_MAIN"/>
+              <UML:Diagram.elements>
+                <UML:DiagramElement type="ACT_CLI" xmi.idref="ACT_CLI"/>
+                <UML:DiagramElement type="ACT_ADM" xmi.idref="ACT_ADM"/>
+                <UML:DiagramElement type="ACT_OPE" xmi.idref="ACT_OPE"/>
+                <UML:DiagramElement type="UC_001" xmi.idref="UC_001"/>
+                <UML:DiagramElement type="UC_002" xmi.idref="UC_002"/>
+                <UML:DiagramElement type="UC_003" xmi.idref="UC_003"/>
+                <UML:DiagramElement type="UC_004" xmi.idref="UC_004"/>
+                <UML:DiagramElement type="UC_005" xmi.idref="UC_005"/>
+                <UML:DiagramElement type="UC_006" xmi.idref="UC_006"/>
+                <UML:DiagramElement type="UC_007" xmi.idref="UC_007"/>
+                <UML:DiagramElement type="UC_008" xmi.idref="UC_008"/>
+                <UML:DiagramElement type="UC_009" xmi.idref="UC_009"/>
+                <UML:DiagramElement type="UC_010" xmi.idref="UC_010"/>
+                <UML:DiagramElement type="UC_011" xmi.idref="UC_011"/>
+                <UML:DiagramElement type="UC_012" xmi.idref="UC_012"/>
+                <UML:DiagramElement type="UC_013" xmi.idref="UC_013"/>
+              </UML:Diagram.elements>
+            </UML:Diagram>
+            
+            <!-- DIAGRAM 2: ACTIVIDADES -->
+            <UML:ActivityGraph name="02_Reserva_Paquete" xmi.id="ACT_MAIN">
+              <UML:Namespace.ownedElement>
+                <UML:PseudoState name="Inicio" kind="initial" xmi.id="PS_INIT"/>
+                <UML:ActionState name="Buscar paquete" xmi.id="AS_001"/>
+                <UML:ActionState name="Comparar referencias" xmi.id="AS_002"/>
+                <UML:ActionState name="Armar ajustar paquete" xmi.id="AS_003"/>
+                <UML:DecisionPoint name="Se ajusta presupuesto" xmi.id="DP_001"/>
+                <UML:ActionState name="Solicitar reserva" xmi.id="AS_004"/>
+                <UML:ActionState name="Recomendar alternativas" xmi.id="AS_005"/>
+                <UML:ActionState name="Verificar disponibilidad" xmi.id="AS_006"/>
+                <UML:DecisionPoint name="Hay disponibilidad" xmi.id="DP_002"/>
+                <UML:ActionState name="Calcular precio" xmi.id="AS_007"/>
+                <UML:DecisionPoint name="Tipo de cliente" xmi.id="DP_003"/>
+                <UML:ActionState name="Recargo Nacional" xmi.id="AS_008"/>
+                <UML:ActionState name="Recargo Extranjero" xmi.id="AS_009"/>
+                <UML:ActionState name="Enviar confirmacion" xmi.id="AS_010"/>
+                <UML:ActionState name="Confirmar manual" xmi.id="AS_011"/>
+                <UML:PseudoState name="Fin" kind="final" xmi.id="PS_FINAL"/>
+                
+                <!-- TRANSICIONES -->
+                <UML:Transition name="T1" xmi.id="TR_001">
+                  <UML:Transition.source xmi.idref="PS_INIT"/>
+                  <UML:Transition.target xmi.idref="AS_001"/>
+                </UML:Transition>
+                <UML:Transition name="T2" xmi.id="TR_002">
+                  <UML:Transition.source xmi.idref="AS_001"/>
+                  <UML:Transition.target xmi.idref="AS_002"/>
+                </UML:Transition>
+                <UML:Transition name="T3" xmi.id="TR_003">
+                  <UML:Transition.source xmi.idref="AS_002"/>
+                  <UML:Transition.target xmi.idref="AS_003"/>
+                </UML:Transition>
+                <UML:Transition name="T4" xmi.id="TR_004">
+                  <UML:Transition.source xmi.idref="AS_003"/>
+                  <UML:Transition.target xmi.idref="DP_001"/>
+                </UML:Transition>
+                <UML:Transition name="T5_Si" xmi.id="TR_005">
+                  <UML:Transition.source xmi.idref="DP_001"/>
+                  <UML:Transition.target xmi.idref="AS_004"/>
+                  <UML:Transition.guard>[Si]</UML:Transition.guard>
+                </UML:Transition>
+                <UML:Transition name="T6_No" xmi.id="TR_006">
+                  <UML:Transition.source xmi.idref="DP_001"/>
+                  <UML:Transition.target xmi.idref="AS_005"/>
+                  <UML:Transition.guard>[No]</UML:Transition.guard>
+                </UML:Transition>
+                <UML:Transition name="T7" xmi.id="TR_007">
+                  <UML:Transition.source xmi.idref="AS_005"/>
+                  <UML:Transition.target xmi.idref="AS_003"/>
+                </UML:Transition>
+                <UML:Transition name="T8" xmi.id="TR_008">
+                  <UML:Transition.source xmi.idref="AS_004"/>
+                  <UML:Transition.target xmi.idref="AS_006"/>
+                </UML:Transition>
+                <UML:Transition name="T9" xmi.id="TR_009">
+                  <UML:Transition.source xmi.idref="AS_006"/>
+                  <UML:Transition.target xmi.idref="DP_002"/>
+                </UML:Transition>
+                <UML:Transition name="T10_Si" xmi.id="TR_010">
+                  <UML:Transition.source xmi.idref="DP_002"/>
+                  <UML:Transition.target xmi.idref="AS_007"/>
+                  <UML:Transition.guard>[Si]</UML:Transition.guard>
+                </UML:Transition>
+                <UML:Transition name="T11_No" xmi.id="TR_011">
+                  <UML:Transition.source xmi.idref="DP_002"/>
+                  <UML:Transition.target xmi.idref="AS_005"/>
+                  <UML:Transition.guard>[No]</UML:Transition.guard>
+                </UML:Transition>
+                <UML:Transition name="T12" xmi.id="TR_012">
+                  <UML:Transition.source xmi.idref="AS_007"/>
+                  <UML:Transition.target xmi.idref="DP_003"/>
+                </UML:Transition>
+                <UML:Transition name="T13_Nacional" xmi.id="TR_013">
+                  <UML:Transition.source xmi.idref="DP_003"/>
+                  <UML:Transition.target xmi.idref="AS_008"/>
+                  <UML:Transition.guard>[Nacional]</UML:Transition.guard>
+                </UML:Transition>
+                <UML:Transition name="T14_Extranjero" xmi.id="TR_014">
+                  <UML:Transition.source xmi.idref="DP_003"/>
+                  <UML:Transition.target xmi.idref="AS_009"/>
+                  <UML:Transition.guard>[Extranjero]</UML:Transition.guard>
+                </UML:Transition>
+                <UML:Transition name="T15" xmi.id="TR_015">
+                  <UML:Transition.source xmi.idref="AS_008"/>
+                  <UML:Transition.target xmi.idref="AS_010"/>
+                </UML:Transition>
+                <UML:Transition name="T16" xmi.id="TR_016">
+                  <UML:Transition.source xmi.idref="AS_009"/>
+                  <UML:Transition.target xmi.idref="AS_010"/>
+                </UML:Transition>
+                <UML:Transition name="T17" xmi.id="TR_017">
+                  <UML:Transition.source xmi.idref="AS_010"/>
+                  <UML:Transition.target xmi.idref="AS_011"/>
+                </UML:Transition>
+                <UML:Transition name="T18" xmi.id="TR_018">
+                  <UML:Transition.source xmi.idref="AS_011"/>
+                  <UML:Transition.target xmi.idref="PS_FINAL"/>
+                </UML:Transition>
+              </UML:Namespace.ownedElement>
+            </UML:ActivityGraph>
+            
+            <!-- DIAGRAM 3: SECUENCIA -->
+            <UML:Interaction name="03_Secuencia_Reserva" xmi.id="INT_SEQ">
+              <UML:Namespace.ownedElement>
+                <UML:ClassifierRole name="Cliente" xmi.id="CR_CLI"/>
+                <UML:ClassifierRole name="InterfazUsuario" xmi.id="CR_UI"/>
+                <UML:ClassifierRole name="ControladorReservas" xmi.id="CR_CTL"/>
+                <UML:ClassifierRole name="GestorPrecios" xmi.id="CR_PRC"/>
+                <UML:ClassifierRole name="SistemaOperadores" xmi.id="CR_OPE"/>
+                
+                <UML:Message name="1: solicitarReserva" xmi.id="MSG_001">
+                  <UML:Message.sender xmi.idref="CR_CLI"/>
+                  <UML:Message.receiver xmi.idref="CR_UI"/>
+                </UML:Message>
+                <UML:Message name="2: registrarReserva" xmi.id="MSG_002">
+                  <UML:Message.sender xmi.idref="CR_UI"/>
+                  <UML:Message.receiver xmi.idref="CR_CTL"/>
+                </UML:Message>
+                <UML:Message name="3: calcularPrecio" xmi.id="MSG_003">
+                  <UML:Message.sender xmi.idref="CR_CTL"/>
+                  <UML:Message.receiver xmi.idref="CR_PRC"/>
+                </UML:Message>
+                <UML:Message name="3.1: precioFinal" xmi.id="MSG_004">
+                  <UML:Message.sender xmi.idref="CR_PRC"/>
+                  <UML:Message.receiver xmi.idref="CR_CTL"/>
+                </UML:Message>
+                <UML:Message name="4: verificarDisponibilidad" xmi.id="MSG_005">
+                  <UML:Message.sender xmi.idref="CR_CTL"/>
+                  <UML:Message.receiver xmi.idref="CR_OPE"/>
+                </UML:Message>
+                <UML:Message name="4.1: disponible" xmi.id="MSG_006">
+                  <UML:Message.sender xmi.idref="CR_OPE"/>
+                  <UML:Message.receiver xmi.idref="CR_CTL"/>
+                </UML:Message>
+                <UML:Message name="5: confirmarReserva" xmi.id="MSG_007">
+                  <UML:Message.sender xmi.idref="CR_CTL"/>
+                  <UML:Message.receiver xmi.idref="CR_OPE"/>
+                </UML:Message>
+                <UML:Message name="5.1: confirmacion" xmi.id="MSG_008">
+                  <UML:Message.sender xmi.idref="CR_OPE"/>
+                  <UML:Message.receiver xmi.idref="CR_CTL"/>
+                </UML:Message>
+                <UML:Message name="6: mostrarConfirmacion" xmi.id="MSG_009">
+                  <UML:Message.sender xmi.idref="CR_CTL"/>
+                  <UML:Message.receiver xmi.idref="CR_UI"/>
+                </UML:Message>
+              </UML:Namespace.ownedElement>
+            </UML:Interaction>
+            
+            <!-- DIAGRAM 4: COLABORACION -->
+            <UML:Collaboration name="04_Colaboracion_Reserva" xmi.id="COLL_001">
+              <UML:Namespace.ownedElement>
+                <UML:ClassifierRole name="ui" xmi.id="CCR_UI"/>
+                <UML:ClassifierRole name="ctl" xmi.id="CCR_CTL"/>
+                <UML:ClassifierRole name="prc" xmi.id="CCR_PRC"/>
+                <UML:ClassifierRole name="ope" xmi.id="CCR_OPE"/>
+                
+                <UML:Message name="1: solicitarReserva" xmi.id="CMSG_001">
+                  <UML:Message.sender xmi.idref="CCR_UI"/>
+                  <UML:Message.receiver xmi.idref="CCR_CTL"/>
+                </UML:Message>
+                <UML:Message name="1.1: calcularPrecio" xmi.id="CMSG_002">
+                  <UML:Message.sender xmi.idref="CCR_CTL"/>
+                  <UML:Message.receiver xmi.idref="CCR_PRC"/>
+                </UML:Message>
+                <UML:Message name="1.1.1: verificarDisponibilidad" xmi.id="CMSG_003">
+                  <UML:Message.sender xmi.idref="CCR_CTL"/>
+                  <UML:Message.receiver xmi.idref="CCR_OPE"/>
+                </UML:Message>
+                <UML:Message name="1.1.2: confirmarReserva" xmi.id="CMSG_004">
+                  <UML:Message.sender xmi.idref="CCR_CTL"/>
+                  <UML:Message.receiver xmi.idref="CCR_OPE"/>
+                </UML:Message>
+                <UML:Message name="2: mostrarConfirmacion" xmi.id="CMSG_005">
+                  <UML:Message.sender xmi.idref="CCR_CTL"/>
+                  <UML:Message.receiver xmi.idref="CCR_UI"/>
+                </UML:Message>
+              </UML:Namespace.ownedElement>
+            </UML:Collaboration>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
