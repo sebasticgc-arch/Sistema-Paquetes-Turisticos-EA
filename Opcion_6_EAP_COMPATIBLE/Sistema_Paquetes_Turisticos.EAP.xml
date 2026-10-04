@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enterprise_architect_project>
+  <project>
+    <name>Sistema de Paquetes Turisticos</name>
+    <version>1.0</version>
+    <diagrams>
+      <diagram id="DIA_001" name="01 - Casos de Uso" type="UseCase">
+        <elements>
+          <element id="ACT_001" type="Actor" name="Cliente" x="50" y="200" w="80" h="100"/>
+          <element id="ACT_002" type="Actor" name="Administrador" x="50" y="350" w="80" h="100"/>
+          <element id="ACT_003" type="Actor" name="Operador Turistico" x="50" y="500" w="80" h="100"/>
+          <element id="UC_001" type="UseCase" name="Buscar paquete" x="250" y="150" w="100" h="60"/>
+          <element id="UC_002" type="UseCase" name="Armar paquete" x="380" y="150" w="100" h="60"/>
+          <element id="UC_003" type="UseCase" name="Ajustar presupuesto" x="510" y="150" w="100" h="60"/>
+          <element id="UC_004" type="UseCase" name="Comparar opciones" x="640" y="150" w="100" h="60"/>
+          <element id="UC_005" type="UseCase" name="Reservar paquete" x="315" y="280" w="100" h="60"/>
+          <element id="UC_006" type="UseCase" name="Calcular precio" x="445" y="280" w="100" h="60"/>
+          <element id="UC_007" type="UseCase" name="Confirmar reserva" x="575" y="280" w="100" h="60"/>
+          <element id="UC_008" type="UseCase" name="Verificar disponibilidad" x="250" y="410" w="120" h="60"/>
+          <element id="UC_009" type="UseCase" name="Notificar operadores" x="410" y="410" w="120" h="60"/>
+          <element id="UC_010" type="UseCase" name="Gestionar reservas" x="570" y="410" w="100" h="60"/>
+          <element id="UC_011" type="UseCase" name="Registrar cliente" x="315" y="530" w="100" h="60"/>
+          <element id="UC_012" type="UseCase" name="Recomendar alternativas" x="445" y="530" w="120" h="60"/>
+          <element id="UC_013" type="UseCase" name="Confirmar manual" x="605" y="530" w="100" h="60"/>
+        </elements>
+        <relationships>
+          <relationship type="Association" source="ACT_001" target="UC_001"/>
+          <relationship type="Association" source="ACT_001" target="UC_002"/>
+          <relationship type="Association" source="ACT_001" target="UC_005"/>
+          <relationship type="Association" source="ACT_002" target="UC_010"/>
+          <relationship type="Association" source="ACT_003" target="UC_008"/>
+          <relationship type="Association" source="ACT_003" target="UC_009"/>
+          <relationship type="Include" source="UC_005" target="UC_011"/>
+          <relationship type="Include" source="UC_005" target="UC_006"/>
+          <relationship type="Include" source="UC_005" target="UC_008"/>
+          <relationship type="Include" source="UC_007" target="UC_009"/>
+          <relationship type="Extend" source="UC_007" target="UC_013"/>
+          <relationship type="Extend" source="UC_003" target="UC_012"/>
+        </relationships>
+      </diagram>
+      <diagram id="DIA_002" name="02 - Actividades" type="Activity">
+        <elements>
+          <element id="ACT_INIT" type="InitialNode" name="Inicio" x="400" y="50" w="20" h="20"/>
+          <element id="ACT_BUSCAR" type="Action" name="Buscar paquete" x="350" y="120" w="100" h="60"/>
+          <element id="ACT_COMPARAR" type="Action" name="Comparar referencias" x="350" y="220" w="100" h="60"/>
+          <element id="ACT_ARMAR" type="Action" name="Armar/ajustar paquete" x="350" y="320" w="100" h="60"/>
+          <element id="DEC_001" type="DecisionNode" name="¿Se ajusta al presupuesto?" x="380" y="420" w="40" h="40"/>
+          <element id="ACT_SOLICITAR" type="Action" name="Solicitar reserva" x="480" y="420" w="100" h="60"/>
+          <element id="ACT_RECOMENDAR" type="Action" name="Recomendar alternativas" x="220" y="420" w="100" h="60"/>
+          <element id="ACT_VERIFICAR" type="Action" name="Verificar disponibilidad" x="480" y="520" w="100" h="60"/>
+          <element id="DEC_002" type="DecisionNode" name="¿Hay disponibilidad?" x="510" y="620" w="40" h="40"/>
+          <element id="ACT_CALCULAR" type="Action" name="Calcular precio" x="620" y="620" w="100" h="60"/>
+          <element id="DEC_003" type="DecisionNode" name="¿Tipo de cliente?" x="650" y="720" w="40" h="40"/>
+          <element id="ACT_RECARGO_NAC" type="Action" name="Recargo Nacional" x="570" y="720" w="100" h="60"/>
+          <element id="ACT_RECARGO_EXT" type="Action" name="Recargo Extranjero" x="750" y="720" w="100" h="60"/>
+          <element id="MERGE_001" type="MergeNode" name="Merge" x="660" y="820" w="20" h="20"/>
+          <element id="ACT_ENVIAR" type="Action" name="Enviar confirmación" x="620" y="880" w="100" h="60"/>
+          <element id="ACT_MANUAL" type="Action" name="Confirmar manual" x="620" y="980" w="100" h="60"/>
+          <element id="ACT_FINAL" type="FinalNode" name="Fin" x="660" y="1080" w="20" h="20"/>
+        </elements>
+        <flows>
+          <flow source="ACT_INIT" target="ACT_BUSCAR"/>
+          <flow source="ACT_BUSCAR" target="ACT_COMPARAR"/>
+          <flow source="ACT_COMPARAR" target="ACT_ARMAR"/>
+          <flow source="ACT_ARMAR" target="DEC_001"/>
+          <flow source="DEC_001" target="ACT_SOLICITAR" guard="[yes]"/>
+          <flow source="DEC_001" target="ACT_RECOMENDAR" guard="[no]"/>
+          <flow source="ACT_RECOMENDAR" target="ACT_ARMAR"/>
+          <flow source="ACT_SOLICITAR" target="ACT_VERIFICAR"/>
+          <flow source="ACT_VERIFICAR" target="DEC_002"/>
+          <flow source="DEC_002" target="ACT_CALCULAR" guard="[yes]"/>
+          <flow source="DEC_002" target="ACT_RECOMENDAR" guard="[no]"/>
+          <flow source="ACT_CALCULAR" target="DEC_003"/>
+          <flow source="DEC_003" target="ACT_RECARGO_NAC" guard="[nacional]"/>
+          <flow source="DEC_003" target="ACT_RECARGO_EXT" guard="[extranjero]"/>
+          <flow source="ACT_RECARGO_NAC" target="MERGE_001"/>
+          <flow source="ACT_RECARGO_EXT" target="MERGE_001"/>
+          <flow source="MERGE_001" target="ACT_ENVIAR"/>
+          <flow source="ACT_ENVIAR" target="ACT_MANUAL"/>
+          <flow source="ACT_MANUAL" target="ACT_FINAL"/>
+        </flows>
+      </diagram>
+      <diagram id="DIA_003" name="03 - Secuencia" type="Sequence">
+        <lifelines>
+          <lifeline id="LL_001" name="Cliente"/>
+          <lifeline id="LL_002" name="InterfazUsuario"/>
+          <lifeline id="LL_003" name="ControladorReservas"/>
+          <lifeline id="LL_004" name="GestorPrecios"/>
+          <lifeline id="LL_005" name="SistemaOperadores"/>
+        </lifelines>
+        <messages>
+          <message number="1" source="LL_001" target="LL_002" name="solicitarReserva(paquete)" type="synchCall"/>
+          <message number="2" source="LL_002" target="LL_003" name="registrarReserva()" type="synchCall"/>
+          <message number="3" source="LL_003" target="LL_004" name="calcularPrecio()" type="synchCall"/>
+          <message number="3.1" source="LL_004" target="LL_003" name="precioFinal" type="reply"/>
+          <message number="4" source="LL_003" target="LL_005" name="verificarDisponibilidad()" type="synchCall"/>
+          <message number="4.1" source="LL_005" target="LL_003" name="disponible" type="reply"/>
+          <message number="5" source="LL_003" target="LL_005" name="confirmarReserva()" type="synchCall"/>
+          <message number="5.1" source="LL_005" target="LL_003" name="confirmacion" type="reply"/>
+          <message number="6" source="LL_003" target="LL_002" name="mostrarConfirmacion()" type="synchCall"/>
+        </messages>
+      </diagram>
+      <diagram id="DIA_004" name="04 - Colaboracion" type="Collaboration">
+        <objects>
+          <object id="OBJ_001" name="ui" type="InterfazUsuario" x="100" y="150"/>
+          <object id="OBJ_002" name="ctl" type="ControladorReservas" x="300" y="150"/>
+          <object id="OBJ_003" name="prc" type="GestorPrecios" x="500" y="150"/>
+          <object id="OBJ_004" name="ope" type="SistemaOperadores" x="700" y="150"/>
+        </objects>
+        <links>
+          <link number="1" source="OBJ_001" target="OBJ_002" name="solicitarReserva()" type="synchCall"/>
+          <link number="1.1" source="OBJ_002" target="OBJ_003" name="calcularPrecio()" type="synchCall"/>
+          <link number="1.1.1" source="OBJ_002" target="OBJ_004" name="verificarDisponibilidad()" type="synchCall"/>
+          <link number="1.1.2" source="OBJ_002" target="OBJ_004" name="confirmarReserva()" type="synchCall"/>
+          <link number="2" source="OBJ_002" target="OBJ_001" name="mostrarConfirmacion()" type="synchCall"/>
+        </links>
+      </diagram>
+    </diagrams>
+  </project>
+</enterprise_architect_project>
