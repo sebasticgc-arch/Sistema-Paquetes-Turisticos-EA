@@ -1,0 +1,10 @@
+DiagramName,SequenceNumber,Source,Target,MessageName,MessageType,Guard,Return
+03 - Secuencia,1,Cliente,InterfazUsuario,solicitarReserva(paquete),synchCall,,
+03 - Secuencia,1.1,InterfazUsuario,ControladorReservas,registrarReserva(),synchCall,,
+03 - Secuencia,1.1.1,ControladorReservas,GestorPrecios,calcularPrecio(),synchCall,,
+03 - Secuencia,1.1.2,GestorPrecios,ControladorReservas,[precioFinal],reply,,Si
+03 - Secuencia,1.1.3,ControladorReservas,SistemaOperadores,verificarDisponibilidad(),synchCall,,
+03 - Secuencia,1.1.4,SistemaOperadores,ControladorReservas,[disponible],reply,,Si
+03 - Secuencia,1.1.5,ControladorReservas,SistemaOperadores,confirmarReserva(),synchCall,,
+03 - Secuencia,1.1.6,SistemaOperadores,ControladorReservas,[confirmacion],reply,,Si
+03 - Secuencia,1.2,ControladorReservas,InterfazUsuario,mostrarConfirmacion(),reply,,Si
