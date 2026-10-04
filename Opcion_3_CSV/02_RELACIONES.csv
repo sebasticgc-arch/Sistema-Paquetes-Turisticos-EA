@@ -1,0 +1,13 @@
+RelationType,Source,Target,Name,Stereotype,Description
+Association,ACTOR_CLIENTE,UC_BUSCAR,Usar,Association,Cliente busca paquetes
+Association,ACTOR_CLIENTE,UC_ARMAR,Usar,Association,Cliente arma paquete personalizado
+Association,ACTOR_CLIENTE,UC_RESERVAR,Usar,Association,Cliente realiza reserva
+Association,ACTOR_ADMIN,UC_GESTIONAR,Usar,Association,Administrador gestiona reservas
+Association,ACTOR_OPERADOR,UC_VERIFICAR,Usar,Association,Operador verifica disponibilidad
+Association,ACTOR_OPERADOR,UC_NOTIFICAR,Usar,Association,Operador recibe notificaciones
+Include,UC_RESERVAR,UC_REGISTRAR,include,include,Reservar siempre incluye registrar cliente
+Include,UC_RESERVAR,UC_CALCULAR,include,include,Reservar siempre incluye calcular precio
+Include,UC_RESERVAR,UC_VERIFICAR,include,include,Reservar siempre incluye verificar disponibilidad
+Include,UC_CONFIRMAR,UC_NOTIFICAR,include,include,Confirmar siempre incluye notificar
+Extend,UC_CONFIRMAR,UC_CONFIRMAR_MANUAL,extend,extend,Puede extenderse con confirmación manual
+Extend,UC_AJUSTAR,UC_RECOMENDAR,extend,extend,Puede extenderse con recomendaciones alternativas
