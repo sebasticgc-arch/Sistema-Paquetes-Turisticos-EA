@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:diagram="http://www.sparxsystems.com/uml/2.0">
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
   <xmi:Documentation exporter="Enterprise Architect" exporterVersion="8.0"/>
   <uml:Model xmi:type="uml:Model" xmi:id="EAPK_ROOT" name="Sistema de Paquetes Turisticos">
     
-    <!-- ==================== ELEMENTO RAIZ COMPARTIDO ==================== -->
     <packagedElement xmi:type="uml:Package" xmi:id="PKG_MAIN" name="Sistema de Paquetes Turisticos" visibility="public">
       
       <!-- ==================== ACTORES ==================== -->
@@ -12,164 +11,149 @@
       <packagedElement xmi:type="uml:Actor" xmi:id="ACTOR_OPERADOR" name="Operador Turistico" visibility="public"/>
       
       <!-- ==================== CASOS DE USO ==================== -->
-      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_BUSCAR" name="Buscar paquete turistico" visibility="public"/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_ARMAR" name="Armar paquete personalizado" visibility="public"/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_AJUSTAR" name="Ajustar paquete al presupuesto" visibility="public"/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_COMPARAR" name="Comparar destinos y precios" visibility="public"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_BUSCAR" name="Buscar paquete" visibility="public"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_ARMAR" name="Armar paquete" visibility="public"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_AJUSTAR" name="Ajustar presupuesto" visibility="public"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_COMPARAR" name="Comparar opciones" visibility="public"/>
       <packagedElement xmi:type="uml:UseCase" xmi:id="UC_RESERVAR" name="Reservar paquete" visibility="public"/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_CALCULAR" name="Calcular precio final" visibility="public"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_CALCULAR" name="Calcular precio" visibility="public"/>
       <packagedElement xmi:type="uml:UseCase" xmi:id="UC_CONFIRMAR" name="Confirmar reserva" visibility="public"/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_VERIFICAR" name="Verificar disponibilidad con operadores" visibility="public"/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_NOTIFICAR" name="Notificar confirmacion a operadores" visibility="public"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_VERIFICAR" name="Verificar disponibilidad" visibility="public"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_NOTIFICAR" name="Notificar operadores" visibility="public"/>
       <packagedElement xmi:type="uml:UseCase" xmi:id="UC_GESTIONAR" name="Gestionar reservas" visibility="public"/>
-      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_CONFIRMAR_MANUAL" name="Confirmar reserva manualmente" visibility="public"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="UC_CONFIRMAR_MANUAL" name="Confirmar manual" visibility="public"/>
       <packagedElement xmi:type="uml:UseCase" xmi:id="UC_RECOMENDAR" name="Recomendar alternativas" visibility="public"/>
       <packagedElement xmi:type="uml:UseCase" xmi:id="UC_REGISTRAR" name="Registrar cliente" visibility="public"/>
       
       <!-- ==================== ASOCIACIONES CASOS DE USO ==================== -->
-      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_C1" name="" visibility="public" memberEnd="ASSOC_C1_END1 ASSOC_C1_END2">
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C1_END1" name="" visibility="public" type="ACTOR_CLIENTE" association="ASSOC_C1" aggregation="none"/>
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C1_END2" name="" visibility="public" type="UC_BUSCAR" association="ASSOC_C1" aggregation="none"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_C1" memberEnd="ASSOC_C1_END1 ASSOC_C1_END2">
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C1_END1" type="ACTOR_CLIENTE"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C1_END2" type="UC_BUSCAR"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_C2" name="" visibility="public" memberEnd="ASSOC_C2_END1 ASSOC_C2_END2">
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C2_END1" name="" visibility="public" type="ACTOR_CLIENTE" association="ASSOC_C2" aggregation="none"/>
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C2_END2" name="" visibility="public" type="UC_ARMAR" association="ASSOC_C2" aggregation="none"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_C2" memberEnd="ASSOC_C2_END1 ASSOC_C2_END2">
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C2_END1" type="ACTOR_CLIENTE"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C2_END2" type="UC_ARMAR"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_C3" name="" visibility="public" memberEnd="ASSOC_C3_END1 ASSOC_C3_END2">
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C3_END1" name="" visibility="public" type="ACTOR_CLIENTE" association="ASSOC_C3" aggregation="none"/>
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C3_END2" name="" visibility="public" type="UC_RESERVAR" association="ASSOC_C3" aggregation="none"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_C3" memberEnd="ASSOC_C3_END1 ASSOC_C3_END2">
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C3_END1" type="ACTOR_CLIENTE"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_C3_END2" type="UC_RESERVAR"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_A1" name="" visibility="public" memberEnd="ASSOC_A1_END1 ASSOC_A1_END2">
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_A1_END1" name="" visibility="public" type="ACTOR_ADMIN" association="ASSOC_A1" aggregation="none"/>
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_A1_END2" name="" visibility="public" type="UC_GESTIONAR" association="ASSOC_A1" aggregation="none"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_A1" memberEnd="ASSOC_A1_END1 ASSOC_A1_END2">
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_A1_END1" type="ACTOR_ADMIN"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_A1_END2" type="UC_GESTIONAR"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_O1" name="" visibility="public" memberEnd="ASSOC_O1_END1 ASSOC_O1_END2">
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_O1_END1" name="" visibility="public" type="ACTOR_OPERADOR" association="ASSOC_O1" aggregation="none"/>
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_O1_END2" name="" visibility="public" type="UC_VERIFICAR" association="ASSOC_O1" aggregation="none"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_O1" memberEnd="ASSOC_O1_END1 ASSOC_O1_END2">
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_O1_END1" type="ACTOR_OPERADOR"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_O1_END2" type="UC_VERIFICAR"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_O2" name="" visibility="public" memberEnd="ASSOC_O2_END1 ASSOC_O2_END2">
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_O2_END1" name="" visibility="public" type="ACTOR_OPERADOR" association="ASSOC_O2" aggregation="none"/>
-        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_O2_END2" name="" visibility="public" type="UC_NOTIFICAR" association="ASSOC_O2" aggregation="none"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="ASSOC_O2" memberEnd="ASSOC_O2_END1 ASSOC_O2_END2">
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_O2_END1" type="ACTOR_OPERADOR"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="ASSOC_O2_END2" type="UC_NOTIFICAR"/>
       </packagedElement>
       
-      <!-- ==================== INCLUDE RELATIONSHIPS ==================== -->
-      <packagedElement xmi:type="uml:Include" xmi:id="INCL_1" name="" visibility="public" addition="UC_REGISTRAR" includingUseCase="UC_RESERVAR"/>
-      <packagedElement xmi:type="uml:Include" xmi:id="INCL_2" name="" visibility="public" addition="UC_CALCULAR" includingUseCase="UC_RESERVAR"/>
-      <packagedElement xmi:type="uml:Include" xmi:id="INCL_3" name="" visibility="public" addition="UC_VERIFICAR" includingUseCase="UC_RESERVAR"/>
-      <packagedElement xmi:type="uml:Include" xmi:id="INCL_4" name="" visibility="public" addition="UC_NOTIFICAR" includingUseCase="UC_CONFIRMAR"/>
-      
-      <!-- ==================== EXTEND RELATIONSHIPS ==================== -->
-      <packagedElement xmi:type="uml:Extend" xmi:id="EXT_1" name="" visibility="public" extension="UC_CONFIRMAR_MANUAL" extendedUseCase="UC_CONFIRMAR"/>
-      <packagedElement xmi:type="uml:Extend" xmi:id="EXT_2" name="" visibility="public" extension="UC_RECOMENDAR" extendedUseCase="UC_AJUSTAR"/>
+      <!-- ==================== INCLUDE/EXTEND ==================== -->
+      <packagedElement xmi:type="uml:Include" xmi:id="INCL_1" addition="UC_REGISTRAR" includingUseCase="UC_RESERVAR"/>
+      <packagedElement xmi:type="uml:Include" xmi:id="INCL_2" addition="UC_CALCULAR" includingUseCase="UC_RESERVAR"/>
+      <packagedElement xmi:type="uml:Include" xmi:id="INCL_3" addition="UC_VERIFICAR" includingUseCase="UC_RESERVAR"/>
+      <packagedElement xmi:type="uml:Include" xmi:id="INCL_4" addition="UC_NOTIFICAR" includingUseCase="UC_CONFIRMAR"/>
+      <packagedElement xmi:type="uml:Extend" xmi:id="EXT_1" extension="UC_CONFIRMAR_MANUAL" extendedUseCase="UC_CONFIRMAR"/>
+      <packagedElement xmi:type="uml:Extend" xmi:id="EXT_2" extension="UC_RECOMENDAR" extendedUseCase="UC_AJUSTAR"/>
       
       <!-- ==================== CLASES PARA SECUENCIA/COLABORACION ==================== -->
       <packagedElement xmi:type="uml:Class" xmi:id="CLASS_UI" name="InterfazUsuario" visibility="public">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="ATTR_UI1" name="usuario" visibility="public" type=""/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_UI1" name="solicitarReserva" visibility="public"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_UI2" name="mostrarConfirmacion" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_UI1" name="solicitarReserva()"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_UI2" name="mostrarConfirmacion()"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="CLASS_CTL" name="ControladorReservas" visibility="public">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="ATTR_CTL1" name="reservas" visibility="public" type=""/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_CTL1" name="registrarReserva" visibility="public"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_CTL2" name="confirmarReserva" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_CTL1" name="registrarReserva()"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_CTL2" name="confirmarReserva()"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="CLASS_PRC" name="GestorPrecios" visibility="public">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="ATTR_PRC1" name="precioBase" visibility="public" type=""/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="ATTR_PRC2" name="recargos" visibility="public" type=""/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_PRC1" name="calcularPrecio" visibility="public"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_PRC2" name="aplicarRecargo" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_PRC1" name="calcularPrecio()"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_PRC2" name="aplicarRecargo()"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="CLASS_OPE" name="SistemaOperadoresExternos" visibility="public">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="ATTR_OPE1" name="conexion" visibility="public" type=""/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_OPE1" name="verificarDisponibilidad" visibility="public"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_OPE2" name="confirmarReserva" visibility="public"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="CLASS_OPE" name="SistemaOperadores" visibility="public">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_OPE1" name="verificarDisponibilidad()"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="OP_OPE2" name="confirmarReserva()"/>
       </packagedElement>
       
-      <!-- ==================== NODOS DE ACTIVIDAD ==================== -->
-      <packagedElement xmi:type="uml:Activity" xmi:id="ACT_MAIN" name="Reserva de Paquete Turistico" visibility="public" isReentrant="false">
-        <region xmi:type="uml:ActivityPartition" xmi:id="PART_CLIENTE" name="Cliente" visibility="public" isCriticalRegion="false"/>
-        <region xmi:type="uml:ActivityPartition" xmi:id="PART_SISTEMA" name="Sistema" visibility="public" isCriticalRegion="false"/>
-        <region xmi:type="uml:ActivityPartition" xmi:id="PART_ADMIN" name="Administrador" visibility="public" isCriticalRegion="false"/>
+      <!-- ==================== ACTIVIDAD ==================== -->
+      <packagedElement xmi:type="uml:Activity" xmi:id="ACT_MAIN" name="Reserva de Paquete Turistico" visibility="public">
+        <region xmi:type="uml:ActivityPartition" xmi:id="PART_CLIENTE" name="Cliente"/>
+        <region xmi:type="uml:ActivityPartition" xmi:id="PART_SISTEMA" name="Sistema"/>
+        <region xmi:type="uml:ActivityPartition" xmi:id="PART_ADMIN" name="Administrador"/>
         
-        <node xmi:type="uml:InitialNode" xmi:id="N_INIT" name="" visibility="public" inPartition="PART_CLIENTE"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="N_BUSCAR" name="Buscar paquete" visibility="public" inPartition="PART_CLIENTE"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="N_COMPARAR" name="Comparar referencias" visibility="public" inPartition="PART_CLIENTE"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="N_ARMAR" name="Armar/ajustar paquete" visibility="public" inPartition="PART_CLIENTE"/>
-        <node xmi:type="uml:DecisionNode" xmi:id="N_DECISION1" name="Se ajusta al presupuesto?" visibility="public" inPartition="PART_CLIENTE"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="N_RECOMENDAR" name="Recomendar alternativas" visibility="public" inPartition="PART_SISTEMA"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="N_SOLICITAR" name="Solicitar reserva" visibility="public" inPartition="PART_CLIENTE"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="N_VERIFICAR" name="Verificar disponibilidad" visibility="public" inPartition="PART_SISTEMA"/>
-        <node xmi:type="uml:DecisionNode" xmi:id="N_DECISION2" name="Hay disponibilidad?" visibility="public" inPartition="PART_SISTEMA"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="N_CALCULAR" name="Calcular precio" visibility="public" inPartition="PART_SISTEMA"/>
-        <node xmi:type="uml:DecisionNode" xmi:id="N_DECISION3" name="Tipo de cliente?" visibility="public" inPartition="PART_SISTEMA"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="N_RECARGO_NAC" name="Recargo: $15 (mayorista) o 10% (nacional)" visibility="public" inPartition="PART_SISTEMA"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="N_RECARGO_EXT" name="Recargo: max(20%, $500)" visibility="public" inPartition="PART_SISTEMA"/>
-        <node xmi:type="uml:MergeNode" xmi:id="N_MERGE" name="" visibility="public" inPartition="PART_SISTEMA"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="N_ENVIAR" name="Enviar confirmacion" visibility="public" inPartition="PART_SISTEMA"/>
-        <node xmi:type="uml:OpaqueAction" xmi:id="N_MANUAL" name="Confirmar reserva (manual)" visibility="public" inPartition="PART_ADMIN"/>
-        <node xmi:type="uml:ActivityFinalNode" xmi:id="N_FINAL" name="" visibility="public" inPartition="PART_ADMIN"/>
+        <node xmi:type="uml:InitialNode" xmi:id="N_INIT"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="N_BUSCAR" name="Buscar paquete"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="N_COMPARAR" name="Comparar referencias"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="N_ARMAR" name="Armar/ajustar paquete"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="N_DECISION1" name="Se ajusta?"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="N_RECOMENDAR" name="Recomendar"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="N_SOLICITAR" name="Solicitar reserva"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="N_VERIFICAR" name="Verificar disponibilidad"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="N_DECISION2" name="Disponible?"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="N_CALCULAR" name="Calcular precio"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="N_DECISION3" name="Tipo cliente?"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="N_RECARGO_NAC" name="Recargo Nacional"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="N_RECARGO_EXT" name="Recargo Extranjero"/>
+        <node xmi:type="uml:MergeNode" xmi:id="N_MERGE"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="N_ENVIAR" name="Enviar confirmacion"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="N_MANUAL" name="Confirmar manual"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="N_FINAL"/>
         
-        <!-- Flujos de Control -->
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW1" source="N_INIT" target="N_BUSCAR" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW2" source="N_BUSCAR" target="N_COMPARAR" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW3" source="N_COMPARAR" target="N_ARMAR" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW4" source="N_ARMAR" target="N_DECISION1" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW5" source="N_DECISION1" target="N_RECOMENDAR" visibility="public">
-          <guard xmi:type="uml:LiteralString" value="No"/>
-        </edge>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW6" source="N_RECOMENDAR" target="N_ARMAR" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW7" source="N_DECISION1" target="N_SOLICITAR" visibility="public">
-          <guard xmi:type="uml:LiteralString" value="Si"/>
-        </edge>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW8" source="N_SOLICITAR" target="N_VERIFICAR" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW9" source="N_VERIFICAR" target="N_DECISION2" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW10" source="N_DECISION2" target="N_RECOMENDAR" visibility="public">
-          <guard xmi:type="uml:LiteralString" value="No"/>
-        </edge>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW11" source="N_DECISION2" target="N_CALCULAR" visibility="public">
-          <guard xmi:type="uml:LiteralString" value="Si"/>
-        </edge>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW12" source="N_CALCULAR" target="N_DECISION3" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW13" source="N_DECISION3" target="N_RECARGO_NAC" visibility="public">
-          <guard xmi:type="uml:LiteralString" value="Nacional"/>
-        </edge>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW14" source="N_DECISION3" target="N_RECARGO_EXT" visibility="public">
-          <guard xmi:type="uml:LiteralString" value="Extranjero"/>
-        </edge>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW15" source="N_RECARGO_NAC" target="N_MERGE" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW16" source="N_RECARGO_EXT" target="N_MERGE" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW17" source="N_MERGE" target="N_ENVIAR" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW18" source="N_ENVIAR" target="N_MANUAL" visibility="public"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="FLOW19" source="N_MANUAL" target="N_FINAL" visibility="public"/>
+        <edge xmi:type="uml:ControlFlow" source="N_INIT" target="N_BUSCAR"/>
+        <edge xmi:type="uml:ControlFlow" source="N_BUSCAR" target="N_COMPARAR"/>
+        <edge xmi:type="uml:ControlFlow" source="N_COMPARAR" target="N_ARMAR"/>
+        <edge xmi:type="uml:ControlFlow" source="N_ARMAR" target="N_DECISION1"/>
+        <edge xmi:type="uml:ControlFlow" source="N_DECISION1" target="N_RECOMENDAR"><guard xmi:type="uml:LiteralString" value="No"/></edge>
+        <edge xmi:type="uml:ControlFlow" source="N_RECOMENDAR" target="N_ARMAR"/>
+        <edge xmi:type="uml:ControlFlow" source="N_DECISION1" target="N_SOLICITAR"><guard xmi:type="uml:LiteralString" value="Si"/></edge>
+        <edge xmi:type="uml:ControlFlow" source="N_SOLICITAR" target="N_VERIFICAR"/>
+        <edge xmi:type="uml:ControlFlow" source="N_VERIFICAR" target="N_DECISION2"/>
+        <edge xmi:type="uml:ControlFlow" source="N_DECISION2" target="N_RECOMENDAR"><guard xmi:type="uml:LiteralString" value="No"/></edge>
+        <edge xmi:type="uml:ControlFlow" source="N_DECISION2" target="N_CALCULAR"><guard xmi:type="uml:LiteralString" value="Si"/></edge>
+        <edge xmi:type="uml:ControlFlow" source="N_CALCULAR" target="N_DECISION3"/>
+        <edge xmi:type="uml:ControlFlow" source="N_DECISION3" target="N_RECARGO_NAC"><guard xmi:type="uml:LiteralString" value="Nacional"/></edge>
+        <edge xmi:type="uml:ControlFlow" source="N_DECISION3" target="N_RECARGO_EXT"><guard xmi:type="uml:LiteralString" value="Extranjero"/></edge>
+        <edge xmi:type="uml:ControlFlow" source="N_RECARGO_NAC" target="N_MERGE"/>
+        <edge xmi:type="uml:ControlFlow" source="N_RECARGO_EXT" target="N_MERGE"/>
+        <edge xmi:type="uml:ControlFlow" source="N_MERGE" target="N_ENVIAR"/>
+        <edge xmi:type="uml:ControlFlow" source="N_ENVIAR" target="N_MANUAL"/>
+        <edge xmi:type="uml:ControlFlow" source="N_MANUAL" target="N_FINAL"/>
       </packagedElement>
       
-      <!-- ==================== INTERACCION - SECUENCIA ==================== -->
-      <packagedElement xmi:type="uml:Interaction" xmi:id="INTER_SEQ" name="Confirmacion de Reserva - Secuencia" visibility="public">
-        <lifeline xmi:type="uml:Lifeline" xmi:id="LL_CLIENTE" name="Cliente" visibility="public"/>
-        <lifeline xmi:type="uml:Lifeline" xmi:id="LL_UI" name=":InterfazUsuario" visibility="public" represents="CLASS_UI"/>
-        <lifeline xmi:type="uml:Lifeline" xmi:id="LL_CTL" name=":ControladorReservas" visibility="public" represents="CLASS_CTL"/>
-        <lifeline xmi:type="uml:Lifeline" xmi:id="LL_PRC" name=":GestorPrecios" visibility="public" represents="CLASS_PRC"/>
-        <lifeline xmi:type="uml:Lifeline" xmi:id="LL_OPE" name=":SistemaOperadores" visibility="public" represents="CLASS_OPE"/>
+      <!-- ==================== INTERACCION SECUENCIA ==================== -->
+      <packagedElement xmi:type="uml:Interaction" xmi:id="INTER_SEQ" name="Confirmacion de Reserva" visibility="public">
+        <lifeline xmi:type="uml:Lifeline" xmi:id="LL_CLIENTE" name="Cliente" represents="ACTOR_CLIENTE"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="LL_UI" name=":InterfazUsuario" represents="CLASS_UI"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="LL_CTL" name=":ControladorReservas" represents="CLASS_CTL"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="LL_PRC" name=":GestorPrecios" represents="CLASS_PRC"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="LL_OPE" name=":SistemaOperadores" represents="CLASS_OPE"/>
         
-        <message xmi:type="uml:Message" xmi:id="MSG1" name="1: solicitarReserva(paquete)" visibility="public" messageSort="synchCall" sendEvent="LL_CLIENTE" receiveEvent="LL_UI"/>
-        <message xmi:type="uml:Message" xmi:id="MSG2" name="1.1: registrarReserva(paquete, cliente)" visibility="public" messageSort="synchCall" sendEvent="LL_UI" receiveEvent="LL_CTL"/>
-        <message xmi:type="uml:Message" xmi:id="MSG3" name="1.1.1: calcularPrecio(paquete, tipoCliente)" visibility="public" messageSort="synchCall" sendEvent="LL_CTL" receiveEvent="LL_PRC"/>
-        <message xmi:type="uml:Message" xmi:id="MSG4" name="1.1.2: [precioFinal]" visibility="public" messageSort="reply" sendEvent="LL_PRC" receiveEvent="LL_CTL"/>
-        <message xmi:type="uml:Message" xmi:id="MSG5" name="1.1.3: verificarDisponibilidad(paquete)" visibility="public" messageSort="synchCall" sendEvent="LL_CTL" receiveEvent="LL_OPE"/>
-        <message xmi:type="uml:Message" xmi:id="MSG6" name="1.1.4: [disponible]" visibility="public" messageSort="reply" sendEvent="LL_OPE" receiveEvent="LL_CTL"/>
-        <message xmi:type="uml:Message" xmi:id="MSG7" name="1.1.5: confirmarReserva(reserva)" visibility="public" messageSort="synchCall" sendEvent="LL_CTL" receiveEvent="LL_OPE"/>
-        <message xmi:type="uml:Message" xmi:id="MSG8" name="1.1.6: [confirmacion]" visibility="public" messageSort="reply" sendEvent="LL_OPE" receiveEvent="LL_CTL"/>
-        <message xmi:type="uml:Message" xmi:id="MSG9" name="1.2: mostrarConfirmacion(precio, estado)" visibility="public" messageSort="reply" sendEvent="LL_CTL" receiveEvent="LL_UI"/>
-        <message xmi:type="uml:Message" xmi:id="MSG10" name="1.3: [confirmacion recibida]" visibility="public" messageSort="reply" sendEvent="LL_UI" receiveEvent="LL_CLIENTE"/>
+        <message xmi:type="uml:Message" xmi:id="MSG1" name="1: solicitarReserva(paquete)" messageSort="synchCall" sendEvent="LL_CLIENTE" receiveEvent="LL_UI"/>
+        <message xmi:type="uml:Message" xmi:id="MSG2" name="1.1: registrarReserva()" messageSort="synchCall" sendEvent="LL_UI" receiveEvent="LL_CTL"/>
+        <message xmi:type="uml:Message" xmi:id="MSG3" name="1.1.1: calcularPrecio()" messageSort="synchCall" sendEvent="LL_CTL" receiveEvent="LL_PRC"/>
+        <message xmi:type="uml:Message" xmi:id="MSG4" name="1.1.2: precioFinal" messageSort="reply" sendEvent="LL_PRC" receiveEvent="LL_CTL"/>
+        <message xmi:type="uml:Message" xmi:id="MSG5" name="1.1.3: verificarDisponibilidad()" messageSort="synchCall" sendEvent="LL_CTL" receiveEvent="LL_OPE"/>
+        <message xmi:type="uml:Message" xmi:id="MSG6" name="1.1.4: disponible" messageSort="reply" sendEvent="LL_OPE" receiveEvent="LL_CTL"/>
+        <message xmi:type="uml:Message" xmi:id="MSG7" name="1.1.5: confirmarReserva()" messageSort="synchCall" sendEvent="LL_CTL" receiveEvent="LL_OPE"/>
+        <message xmi:type="uml:Message" xmi:id="MSG8" name="1.1.6: confirmacion" messageSort="reply" sendEvent="LL_OPE" receiveEvent="LL_CTL"/>
+        <message xmi:type="uml:Message" xmi:id="MSG9" name="1.2: mostrarConfirmacion()" messageSort="reply" sendEvent="LL_CTL" receiveEvent="LL_UI"/>
       </packagedElement>
       
-      <!-- ==================== COLABORACION / COMUNICACION ==================== -->
-      <packagedElement xmi:type="uml:Collaboration" xmi:id="COLL_MAIN" name="Confirmacion de Reserva - Colaboracion" visibility="public">
-        <collaborationRole xmi:type="uml:ConnectableElement" xmi:id="COLL_OBJ1" name="ui" type="CLASS_UI"/>
-        <collaborationRole xmi:type="uml:ConnectableElement" xmi:id="COLL_OBJ2" name="ctl" type="CLASS_CTL"/>
-        <collaborationRole xmi:type="uml:ConnectableElement" xmi:id="COLL_OBJ3" name="prc" type="CLASS_PRC"/>
-        <collaborationRole xmi:type="uml:ConnectableElement" xmi:id="COLL_OBJ4" name="ope" type="CLASS_OPE"/>
-        <ownedBehavior xmi:type="uml:Interaction" xmi:id="INTER_COLL" name="Confirmacion de Reserva - Colaboracion" visibility="public"/>
+      <!-- ==================== COLABORACION ==================== -->
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="COLL_MAIN" name="Confirmacion - Colaboracion" visibility="public">
+        <collaborationRole xmi:type="uml:ConnectableElement" xmi:id="COLL_UI" name="ui" type="CLASS_UI"/>
+        <collaborationRole xmi:type="uml:ConnectableElement" xmi:id="COLL_CTL" name="ctl" type="CLASS_CTL"/>
+        <collaborationRole xmi:type="uml:ConnectableElement" xmi:id="COLL_PRC" name="prc" type="CLASS_PRC"/>
+        <collaborationRole xmi:type="uml:ConnectableElement" xmi:id="COLL_OPE" name="ope" type="CLASS_OPE"/>
+        <ownedBehavior xmi:type="uml:Interaction" xmi:id="INTER_COLL" name="Flujo Colaboracion">
+          <message xmi:type="uml:Message" xmi:id="CMSG1" name="1: solicitarReserva()" messageSort="synchCall"/>
+          <message xmi:type="uml:Message" xmi:id="CMSG2" name="1.1: registrarReserva()" messageSort="synchCall"/>
+          <message xmi:type="uml:Message" xmi:id="CMSG3" name="1.1.1: calcularPrecio()" messageSort="synchCall"/>
+          <message xmi:type="uml:Message" xmi:id="CMSG4" name="1.1.2: verificarDisponibilidad()" messageSort="synchCall"/>
+          <message xmi:type="uml:Message" xmi:id="CMSG5" name="1.1.3: confirmarReserva()" messageSort="synchCall"/>
+        </ownedBehavior>
       </packagedElement>
     </packagedElement>
   </uml:Model>
