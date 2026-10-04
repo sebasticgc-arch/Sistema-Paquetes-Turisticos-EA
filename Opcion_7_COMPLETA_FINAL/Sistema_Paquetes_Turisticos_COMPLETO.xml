@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE XMI SYSTEM "http://www.omg.org/spec/XMI/20131001/xmi.dtd">
+<XMI xmi.version="2.1" xmlns:uml="http://www.omg.org/spec/UML/20131001" xmlns:xmi="http://www.omg.org/spec/XMI/2.1">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Enterprise Architect</XMI.exporter>
+      <XMI.exporterVersion>14.0</XMI.exporterVersion>
+    </XMI.documentation>
+  </XMI.header>
+  <XMI.content>
+    <uml:Model xmi:type="uml:Model" xmi:id="MID_1" name="Sistema de Paquetes Turisticos">
+      <packagedElement xmi:type="uml:Package" xmi:id="PKG_MAIN_001" name="Sistema de Paquetes Turisticos">
+        
+        <!-- ACTORES -->
+        <packagedElement xmi:type="uml:Actor" xmi:id="ACTOR_001" name="Cliente"/>
+        <packagedElement xmi:type="uml:Actor" xmi:id="ACTOR_002" name="Administrador"/>
+        <packagedElement xmi:type="uml:Actor" xmi:id="ACTOR_003" name="Operador Turistico"/>
+        
+        <!-- CASOS DE USO -->
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_001" name="Buscar paquete"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_002" name="Armar paquete"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_003" name="Ajustar presupuesto"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_004" name="Comparar opciones"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_005" name="Reservar paquete"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_006" name="Calcular precio"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_007" name="Confirmar reserva"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_008" name="Verificar disponibilidad"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_009" name="Notificar operadores"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_010" name="Gestionar reservas"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_011" name="Registrar cliente"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_012" name="Recomendar alternativas"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="UC_013" name="Confirmar manual"/>
+        
+        <!-- CLASES -->
+        <packagedElement xmi:type="uml:Class" xmi:id="CLASS_001" name="InterfazUsuario"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="CLASS_002" name="ControladorReservas"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="CLASS_003" name="GestorPrecios"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="CLASS_004" name="SistemaOperadores"/>
+        
+        <!-- DIAGRAM 1: CASOS DE USO -->
+        <packagedElement xmi:type="uml:Package" xmi:id="PKG_DIA_001" name="01_CasosDeUso">
+          <ownedDiagram xmi:type="uml:Diagram" xmi:id="DIAGRAM_001" name="01 - Casos de Uso">
+            <modelElement xmi:idref="PKG_MAIN_001"/>
+            <elements>
+              <element subject="ACTOR_001" seqno="1"/>
+              <element subject="ACTOR_002" seqno="2"/>
+              <element subject="ACTOR_003" seqno="3"/>
+              <element subject="UC_001" seqno="4"/>
+              <element subject="UC_002" seqno="5"/>
+              <element subject="UC_003" seqno="6"/>
+              <element subject="UC_004" seqno="7"/>
+              <element subject="UC_005" seqno="8"/>
+              <element subject="UC_006" seqno="9"/>
+              <element subject="UC_007" seqno="10"/>
+              <element subject="UC_008" seqno="11"/>
+              <element subject="UC_009" seqno="12"/>
+              <element subject="UC_010" seqno="13"/>
+              <element subject="UC_011" seqno="14"/>
+              <element subject="UC_012" seqno="15"/>
+              <element subject="UC_013" seqno="16"/>
+            </elements>
+          </ownedDiagram>
+        </packagedElement>
+        
+        <!-- DIAGRAM 2: ACTIVIDADES -->
+        <packagedElement xmi:type="uml:Activity" xmi:id="ACT_MAIN_001" name="Reserva de Paquete Turistico">
+          <node xmi:type="uml:InitialNode" xmi:id="NODE_INIT_001" name="Inicio"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="NODE_ACTION_001" name="Buscar paquete"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="NODE_ACTION_002" name="Comparar referencias"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="NODE_ACTION_003" name="Armar/ajustar paquete"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="NODE_DEC_001" name="Se ajusta al presupuesto"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="NODE_ACTION_004" name="Solicitar reserva"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="NODE_ACTION_005" name="Recomendar alternativas"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="NODE_ACTION_006" name="Verificar disponibilidad"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="NODE_DEC_002" name="Hay disponibilidad"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="NODE_ACTION_007" name="Calcular precio"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="NODE_DEC_003" name="Tipo de cliente"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="NODE_ACTION_008" name="Recargo Nacional"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="NODE_ACTION_009" name="Recargo Extranjero"/>
+          <node xmi:type="uml:MergeNode" xmi:id="NODE_MERGE_001" name="Merge"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="NODE_ACTION_010" name="Enviar confirmacion"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="NODE_ACTION_011" name="Confirmar manual"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="NODE_FINAL_001" name="Fin"/>
+          
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_001" source="NODE_INIT_001" target="NODE_ACTION_001"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_002" source="NODE_ACTION_001" target="NODE_ACTION_002"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_003" source="NODE_ACTION_002" target="NODE_ACTION_003"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_004" source="NODE_ACTION_003" target="NODE_DEC_001"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_005" source="NODE_DEC_001" target="NODE_ACTION_004"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_006" source="NODE_DEC_001" target="NODE_ACTION_005"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_007" source="NODE_ACTION_005" target="NODE_ACTION_003"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_008" source="NODE_ACTION_004" target="NODE_ACTION_006"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_009" source="NODE_ACTION_006" target="NODE_DEC_002"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_010" source="NODE_DEC_002" target="NODE_ACTION_007"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_011" source="NODE_DEC_002" target="NODE_ACTION_005"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_012" source="NODE_ACTION_007" target="NODE_DEC_003"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_013" source="NODE_DEC_003" target="NODE_ACTION_008"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_014" source="NODE_DEC_003" target="NODE_ACTION_009"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_015" source="NODE_ACTION_008" target="NODE_MERGE_001"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_016" source="NODE_ACTION_009" target="NODE_MERGE_001"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_017" source="NODE_MERGE_001" target="NODE_ACTION_010"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_018" source="NODE_ACTION_010" target="NODE_ACTION_011"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="FLOW_019" source="NODE_ACTION_011" target="NODE_FINAL_001"/>
+        </packagedElement>
+        
+        <packagedElement xmi:type="uml:Package" xmi:id="PKG_DIA_002" name="02_Actividades">
+          <ownedDiagram xmi:type="uml:Diagram" xmi:id="DIAGRAM_002" name="02 - Actividades">
+            <modelElement xmi:idref="ACT_MAIN_001"/>
+          </ownedDiagram>
+        </packagedElement>
+        
+        <!-- DIAGRAM 3: SECUENCIA -->
+        <packagedElement xmi:type="uml:Interaction" xmi:id="INT_001" name="Secuencia Reserva">
+          <lifeline xmi:type="uml:Lifeline" xmi:id="LL_001" name="Cliente"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="LL_002" name="InterfazUsuario"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="LL_003" name="ControladorReservas"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="LL_004" name="GestorPrecios"/>
+          <lifeline xmi:type="uml:Lifeline" xmi:id="LL_005" name="SistemaOperadores"/>
+          
+          <message xmi:type="uml:Message" xmi:id="MSG_001" name="1: solicitarReserva(paquete)"/>
+          <message xmi:type="uml:Message" xmi:id="MSG_002" name="2: registrarReserva()"/>
+          <message xmi:type="uml:Message" xmi:id="MSG_003" name="3: calcularPrecio()"/>
+          <message xmi:type="uml:Message" xmi:id="MSG_004" name="3.1: precioFinal"/>
+          <message xmi:type="uml:Message" xmi:id="MSG_005" name="4: verificarDisponibilidad()"/>
+          <message xmi:type="uml:Message" xmi:id="MSG_006" name="4.1: disponible"/>
+          <message xmi:type="uml:Message" xmi:id="MSG_007" name="5: confirmarReserva()"/>
+          <message xmi:type="uml:Message" xmi:id="MSG_008" name="5.1: confirmacion"/>
+          <message xmi:type="uml:Message" xmi:id="MSG_009" name="6: mostrarConfirmacion()"/>
+        </packagedElement>
+        
+        <packagedElement xmi:type="uml:Package" xmi:id="PKG_DIA_003" name="03_Secuencia">
+          <ownedDiagram xmi:type="uml:Diagram" xmi:id="DIAGRAM_003" name="03 - Secuencia">
+            <modelElement xmi:idref="INT_001"/>
+          </ownedDiagram>
+        </packagedElement>
+        
+        <!-- DIAGRAM 4: COLABORACIÓN -->
+        <packagedElement xmi:type="uml:Collaboration" xmi:id="COLL_001" name="Colaboracion Reserva">
+          <collaborationRole xmi:type="uml:CollaborationRole" xmi:id="CR_001" name="ui"/>
+          <collaborationRole xmi:type="uml:CollaborationRole" xmi:id="CR_002" name="ctl"/>
+          <collaborationRole xmi:type="uml:CollaborationRole" xmi:id="CR_003" name="prc"/>
+          <collaborationRole xmi:type="uml:CollaborationRole" xmi:id="CR_004" name="ope"/>
+          
+          <message xmi:type="uml:Message" xmi:id="CMSG_001" name="1: solicitarReserva()"/>
+          <message xmi:type="uml:Message" xmi:id="CMSG_002" name="1.1: calcularPrecio()"/>
+          <message xmi:type="uml:Message" xmi:id="CMSG_003" name="1.1.1: verificarDisponibilidad()"/>
+          <message xmi:type="uml:Message" xmi:id="CMSG_004" name="1.1.2: confirmarReserva()"/>
+          <message xmi:type="uml:Message" xmi:id="CMSG_005" name="2: mostrarConfirmacion()"/>
+        </packagedElement>
+        
+        <packagedElement xmi:type="uml:Package" xmi:id="PKG_DIA_004" name="04_Colaboracion">
+          <ownedDiagram xmi:type="uml:Diagram" xmi:id="DIAGRAM_004" name="04 - Colaboracion">
+            <modelElement xmi:idref="COLL_001"/>
+          </ownedDiagram>
+        </packagedElement>
+        
+        <!-- ASOCIACIONES -->
+        <packagedElement xmi:type="uml:Association" xmi:id="ASS_001">
+          <memberEnd xmi:idref="ACTOR_001"/>
+          <memberEnd xmi:idref="UC_001"/>
+        </packagedElement>
+        
+        <packagedElement xmi:type="uml:Association" xmi:id="ASS_002">
+          <memberEnd xmi:idref="ACTOR_001"/>
+          <memberEnd xmi:idref="UC_002"/>
+        </packagedElement>
+        
+        <packagedElement xmi:type="uml:Association" xmi:id="ASS_003">
+          <memberEnd xmi:idref="ACTOR_001"/>
+          <memberEnd xmi:idref="UC_005"/>
+        </packagedElement>
+        
+        <packagedElement xmi:type="uml:Association" xmi:id="ASS_004">
+          <memberEnd xmi:idref="ACTOR_002"/>
+          <memberEnd xmi:idref="UC_010"/>
+        </packagedElement>
+        
+        <packagedElement xmi:type="uml:Association" xmi:id="ASS_005">
+          <memberEnd xmi:idref="ACTOR_003"/>
+          <memberEnd xmi:idref="UC_008"/>
+        </packagedElement>
+        
+        <packagedElement xmi:type="uml:Association" xmi:id="ASS_006">
+          <memberEnd xmi:idref="ACTOR_003"/>
+          <memberEnd xmi:idref="UC_009"/>
+        </packagedElement>
+        
+        <!-- INCLUDES -->
+        <packagedElement xmi:type="uml:Include" xmi:id="INC_001" includingUseCase="UC_005" addedUseCase="UC_011"/>
+        <packagedElement xmi:type="uml:Include" xmi:id="INC_002" includingUseCase="UC_005" addedUseCase="UC_006"/>
+        <packagedElement xmi:type="uml:Include" xmi:id="INC_003" includingUseCase="UC_005" addedUseCase="UC_008"/>
+        <packagedElement xmi:type="uml:Include" xmi:id="INC_004" includingUseCase="UC_007" addedUseCase="UC_009"/>
+        
+        <!-- EXTENDS -->
+        <packagedElement xmi:type="uml:Extend" xmi:id="EXT_001" extendedUseCase="UC_007" extension="UC_013"/>
+        <packagedElement xmi:type="uml:Extend" xmi:id="EXT_002" extendedUseCase="UC_003" extension="UC_012"/>
+        
+      </packagedElement>
+    </uml:Model>
+  </XMI.content>
+</XMI>
