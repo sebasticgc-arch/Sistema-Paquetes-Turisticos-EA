@@ -1,0 +1,383 @@
+{
+  "project": {
+    "name": "Sistema de Paquetes Turisticos",
+    "version": "1.0",
+    "diagrams": [
+      {
+        "id": "DIA_001",
+        "name": "01 - Casos de Uso",
+        "type": "UseCase",
+        "elements": [
+          {
+            "id": "ACT_001",
+            "name": "Cliente",
+            "type": "Actor",
+            "description": "Persona que busca y reserva paquetes turísticos",
+            "position": {"x": 50, "y": 200, "width": 80, "height": 100}
+          },
+          {
+            "id": "ACT_002",
+            "name": "Administrador",
+            "type": "Actor",
+            "description": "Gestiona reservas y relaciones con operadores",
+            "position": {"x": 50, "y": 350, "width": 80, "height": 100}
+          },
+          {
+            "id": "ACT_003",
+            "name": "Operador Turistico",
+            "type": "Actor",
+            "description": "Sistema externo que verifica disponibilidad",
+            "position": {"x": 50, "y": 500, "width": 80, "height": 100}
+          },
+          {
+            "id": "UC_001",
+            "name": "Buscar paquete",
+            "type": "UseCase",
+            "position": {"x": 250, "y": 150, "width": 100, "height": 60}
+          },
+          {
+            "id": "UC_002",
+            "name": "Armar paquete",
+            "type": "UseCase",
+            "position": {"x": 380, "y": 150, "width": 100, "height": 60}
+          },
+          {
+            "id": "UC_003",
+            "name": "Ajustar presupuesto",
+            "type": "UseCase",
+            "position": {"x": 510, "y": 150, "width": 100, "height": 60}
+          },
+          {
+            "id": "UC_004",
+            "name": "Comparar opciones",
+            "type": "UseCase",
+            "position": {"x": 640, "y": 150, "width": 100, "height": 60}
+          },
+          {
+            "id": "UC_005",
+            "name": "Reservar paquete",
+            "type": "UseCase",
+            "position": {"x": 315, "y": 280, "width": 100, "height": 60}
+          },
+          {
+            "id": "UC_006",
+            "name": "Calcular precio",
+            "type": "UseCase",
+            "position": {"x": 445, "y": 280, "width": 100, "height": 60}
+          },
+          {
+            "id": "UC_007",
+            "name": "Confirmar reserva",
+            "type": "UseCase",
+            "position": {"x": 575, "y": 280, "width": 100, "height": 60}
+          },
+          {
+            "id": "UC_008",
+            "name": "Verificar disponibilidad",
+            "type": "UseCase",
+            "position": {"x": 250, "y": 410, "width": 120, "height": 60}
+          },
+          {
+            "id": "UC_009",
+            "name": "Notificar operadores",
+            "type": "UseCase",
+            "position": {"x": 410, "y": 410, "width": 120, "height": 60}
+          },
+          {
+            "id": "UC_010",
+            "name": "Gestionar reservas",
+            "type": "UseCase",
+            "position": {"x": 570, "y": 410, "width": 100, "height": 60}
+          },
+          {
+            "id": "UC_011",
+            "name": "Registrar cliente",
+            "type": "UseCase",
+            "position": {"x": 315, "y": 530, "width": 100, "height": 60}
+          },
+          {
+            "id": "UC_012",
+            "name": "Recomendar alternativas",
+            "type": "UseCase",
+            "position": {"x": 445, "y": 530, "width": 120, "height": 60}
+          },
+          {
+            "id": "UC_013",
+            "name": "Confirmar manual",
+            "type": "UseCase",
+            "position": {"x": 605, "y": 530, "width": 100, "height": 60}
+          }
+        ],
+        "relationships": [
+          {"source": "ACT_001", "target": "UC_001", "type": "Association"},
+          {"source": "ACT_001", "target": "UC_002", "type": "Association"},
+          {"source": "ACT_001", "target": "UC_005", "type": "Association"},
+          {"source": "ACT_002", "target": "UC_010", "type": "Association"},
+          {"source": "ACT_003", "target": "UC_008", "type": "Association"},
+          {"source": "ACT_003", "target": "UC_009", "type": "Association"},
+          {"source": "UC_005", "target": "UC_011", "type": "Include"},
+          {"source": "UC_005", "target": "UC_006", "type": "Include"},
+          {"source": "UC_005", "target": "UC_008", "type": "Include"},
+          {"source": "UC_007", "target": "UC_009", "type": "Include"},
+          {"source": "UC_007", "target": "UC_013", "type": "Extend"},
+          {"source": "UC_003", "target": "UC_012", "type": "Extend"}
+        ]
+      },
+      {
+        "id": "DIA_002",
+        "name": "02 - Actividades",
+        "type": "Activity",
+        "elements": [
+          {
+            "id": "ACT_INIT",
+            "name": "Inicio",
+            "type": "InitialNode",
+            "position": {"x": 400, "y": 50, "width": 20, "height": 20}
+          },
+          {
+            "id": "ACT_BUSCAR",
+            "name": "Buscar paquete",
+            "type": "Action",
+            "position": {"x": 350, "y": 120, "width": 100, "height": 60}
+          },
+          {
+            "id": "ACT_COMPARAR",
+            "name": "Comparar referencias",
+            "type": "Action",
+            "position": {"x": 350, "y": 220, "width": 100, "height": 60}
+          },
+          {
+            "id": "ACT_ARMAR",
+            "name": "Armar/ajustar paquete",
+            "type": "Action",
+            "position": {"x": 350, "y": 320, "width": 100, "height": 60}
+          },
+          {
+            "id": "DEC_001",
+            "name": "¿Se ajusta al presupuesto?",
+            "type": "DecisionNode",
+            "position": {"x": 380, "y": 420, "width": 40, "height": 40}
+          },
+          {
+            "id": "ACT_SOLICITAR",
+            "name": "Solicitar reserva",
+            "type": "Action",
+            "position": {"x": 480, "y": 420, "width": 100, "height": 60}
+          },
+          {
+            "id": "ACT_RECOMENDAR",
+            "name": "Recomendar alternativas",
+            "type": "Action",
+            "position": {"x": 220, "y": 420, "width": 100, "height": 60}
+          },
+          {
+            "id": "ACT_VERIFICAR",
+            "name": "Verificar disponibilidad",
+            "type": "Action",
+            "position": {"x": 480, "y": 520, "width": 100, "height": 60}
+          },
+          {
+            "id": "DEC_002",
+            "name": "¿Hay disponibilidad?",
+            "type": "DecisionNode",
+            "position": {"x": 510, "y": 620, "width": 40, "height": 40}
+          },
+          {
+            "id": "ACT_CALCULAR",
+            "name": "Calcular precio",
+            "type": "Action",
+            "position": {"x": 620, "y": 620, "width": 100, "height": 60}
+          },
+          {
+            "id": "DEC_003",
+            "name": "¿Tipo de cliente?",
+            "type": "DecisionNode",
+            "position": {"x": 650, "y": 720, "width": 40, "height": 40}
+          },
+          {
+            "id": "ACT_RECARGO_NAC",
+            "name": "Recargo Nacional",
+            "type": "Action",
+            "position": {"x": 570, "y": 720, "width": 100, "height": 60}
+          },
+          {
+            "id": "ACT_RECARGO_EXT",
+            "name": "Recargo Extranjero",
+            "type": "Action",
+            "position": {"x": 750, "y": 720, "width": 100, "height": 60}
+          },
+          {
+            "id": "MERGE_001",
+            "name": "Merge",
+            "type": "MergeNode",
+            "position": {"x": 660, "y": 820, "width": 20, "height": 20}
+          },
+          {
+            "id": "ACT_ENVIAR",
+            "name": "Enviar confirmación",
+            "type": "Action",
+            "position": {"x": 620, "y": 880, "width": 100, "height": 60}
+          },
+          {
+            "id": "ACT_MANUAL",
+            "name": "Confirmar manual",
+            "type": "Action",
+            "position": {"x": 620, "y": 980, "width": 100, "height": 60}
+          },
+          {
+            "id": "ACT_FINAL",
+            "name": "Fin",
+            "type": "FinalNode",
+            "position": {"x": 660, "y": 1080, "width": 20, "height": 20}
+          }
+        ],
+        "flows": [
+          {"source": "ACT_INIT", "target": "ACT_BUSCAR"},
+          {"source": "ACT_BUSCAR", "target": "ACT_COMPARAR"},
+          {"source": "ACT_COMPARAR", "target": "ACT_ARMAR"},
+          {"source": "ACT_ARMAR", "target": "DEC_001"},
+          {"source": "DEC_001", "target": "ACT_SOLICITAR", "guard": "[yes]"},
+          {"source": "DEC_001", "target": "ACT_RECOMENDAR", "guard": "[no]"},
+          {"source": "ACT_RECOMENDAR", "target": "ACT_ARMAR"},
+          {"source": "ACT_SOLICITAR", "target": "ACT_VERIFICAR"},
+          {"source": "ACT_VERIFICAR", "target": "DEC_002"},
+          {"source": "DEC_002", "target": "ACT_CALCULAR", "guard": "[yes]"},
+          {"source": "DEC_002", "target": "ACT_RECOMENDAR", "guard": "[no]"},
+          {"source": "ACT_CALCULAR", "target": "DEC_003"},
+          {"source": "DEC_003", "target": "ACT_RECARGO_NAC", "guard": "[nacional]"},
+          {"source": "DEC_003", "target": "ACT_RECARGO_EXT", "guard": "[extranjero]"},
+          {"source": "ACT_RECARGO_NAC", "target": "MERGE_001"},
+          {"source": "ACT_RECARGO_EXT", "target": "MERGE_001"},
+          {"source": "MERGE_001", "target": "ACT_ENVIAR"},
+          {"source": "ACT_ENVIAR", "target": "ACT_MANUAL"},
+          {"source": "ACT_MANUAL", "target": "ACT_FINAL"}
+        ]
+      },
+      {
+        "id": "DIA_003",
+        "name": "03 - Secuencia",
+        "type": "Sequence",
+        "lifelines": [
+          {"id": "LL_001", "name": "Cliente", "type": "Actor"},
+          {"id": "LL_002", "name": "InterfazUsuario", "type": "Class"},
+          {"id": "LL_003", "name": "ControladorReservas", "type": "Class"},
+          {"id": "LL_004", "name": "GestorPrecios", "type": "Class"},
+          {"id": "LL_005", "name": "SistemaOperadores", "type": "Class"}
+        ],
+        "messages": [
+          {"number": 1, "source": "LL_001", "target": "LL_002", "name": "solicitarReserva(paquete)", "type": "synchCall"},
+          {"number": 2, "source": "LL_002", "target": "LL_003", "name": "registrarReserva()", "type": "synchCall"},
+          {"number": 3, "source": "LL_003", "target": "LL_004", "name": "calcularPrecio()", "type": "synchCall"},
+          {"number": "3.1", "source": "LL_004", "target": "LL_003", "name": "precioFinal", "type": "reply"},
+          {"number": 4, "source": "LL_003", "target": "LL_005", "name": "verificarDisponibilidad()", "type": "synchCall"},
+          {"number": "4.1", "source": "LL_005", "target": "LL_003", "name": "disponible", "type": "reply"},
+          {"number": 5, "source": "LL_003", "target": "LL_005", "name": "confirmarReserva()", "type": "synchCall"},
+          {"number": "5.1", "source": "LL_005", "target": "LL_003", "name": "confirmacion", "type": "reply"},
+          {"number": 6, "source": "LL_003", "target": "LL_002", "name": "mostrarConfirmacion()", "type": "synchCall"}
+        ]
+      },
+      {
+        "id": "DIA_004",
+        "name": "04 - Colaboracion",
+        "type": "Collaboration",
+        "objects": [
+          {"id": "OBJ_001", "name": "ui", "type": "InterfazUsuario", "position": {"x": 100, "y": 150}},
+          {"id": "OBJ_002", "name": "ctl", "type": "ControladorReservas", "position": {"x": 300, "y": 150}},
+          {"id": "OBJ_003", "name": "prc", "type": "GestorPrecios", "position": {"x": 500, "y": 150}},
+          {"id": "OBJ_004", "name": "ope", "type": "SistemaOperadores", "position": {"x": 700, "y": 150}}
+        ],
+        "links": [
+          {
+            "number": 1,
+            "source": "OBJ_001",
+            "target": "OBJ_002",
+            "name": "solicitarReserva()",
+            "type": "synchCall"
+          },
+          {
+            "number": "1.1",
+            "source": "OBJ_002",
+            "target": "OBJ_003",
+            "name": "calcularPrecio()",
+            "type": "synchCall"
+          },
+          {
+            "number": "1.1.1",
+            "source": "OBJ_002",
+            "target": "OBJ_004",
+            "name": "verificarDisponibilidad()",
+            "type": "synchCall"
+          },
+          {
+            "number": "1.1.2",
+            "source": "OBJ_002",
+            "target": "OBJ_004",
+            "name": "confirmarReserva()",
+            "type": "synchCall"
+          },
+          {
+            "number": 2,
+            "source": "OBJ_002",
+            "target": "OBJ_001",
+            "name": "mostrarConfirmacion()",
+            "type": "synchCall"
+          }
+        ]
+      }
+    ],
+    "classes": [
+      {
+        "id": "CLS_001",
+        "name": "InterfazUsuario",
+        "stereotype": "boundary",
+        "attributes": [
+          {"name": "usuarioActual", "type": "String"},
+          {"name": "paqueteSeleccionado", "type": "Paquete"}
+        ],
+        "methods": [
+          {"name": "solicitarReserva(paquete)", "returnType": "void"},
+          {"name": "mostrarConfirmacion(resultado)", "returnType": "void"}
+        ]
+      },
+      {
+        "id": "CLS_002",
+        "name": "ControladorReservas",
+        "stereotype": "control",
+        "attributes": [
+          {"name": "reservasActivas", "type": "List<Reserva>"},
+          {"name": "operadorActual", "type": "OperadorTuristico"}
+        ],
+        "methods": [
+          {"name": "registrarReserva(cliente, paquete)", "returnType": "Reserva"},
+          {"name": "confirmarReserva(reserva)", "returnType": "boolean"}
+        ]
+      },
+      {
+        "id": "CLS_003",
+        "name": "GestorPrecios",
+        "stereotype": "entity",
+        "attributes": [
+          {"name": "tasaRecargo", "type": "Double"},
+          {"name": "precioBase", "type": "Double"}
+        ],
+        "methods": [
+          {"name": "calcularPrecio(paquete, cliente)", "returnType": "Double"},
+          {"name": "aplicarRecargo(precio, tipo)", "returnType": "Double"}
+        ]
+      },
+      {
+        "id": "CLS_004",
+        "name": "SistemaOperadores",
+        "stereotype": "external",
+        "attributes": [
+          {"name": "operadoresConectados", "type": "List<Operador>"},
+          {"name": "estadoConexion", "type": "boolean"}
+        ],
+        "methods": [
+          {"name": "verificarDisponibilidad(paquete)", "returnType": "boolean"},
+          {"name": "confirmarReserva(datos)", "returnType": "String"}
+        ]
+      }
+    ]
+  }
+}
